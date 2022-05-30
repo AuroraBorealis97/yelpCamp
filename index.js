@@ -1,7 +1,7 @@
 const express = require("express"); //express
 const path = require("path"); //ejs
 const mongoose = require("mongoose"); //mongo
-const Campground = require('./models/campground');
+const Campground = require('./models/campground'); //mongoose models
 
 mongoose.connect("mongodb://localhost:27017/yelp-camp", {
   useNewUrlParser: true,
