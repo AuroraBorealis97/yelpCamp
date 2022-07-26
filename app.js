@@ -1,6 +1,7 @@
 const express = require("express"); //express
 const path = require("path"); //ejs
 const mongoose = require("mongoose"); //mongo
+const ejsMate = require('ejs-mate');
 const methodOverride = require('method-override'); //enable use of PUT, DELETE, and other non POST requests
 const Campground = require("./models/campground"); //mongoose models
 
@@ -17,6 +18,7 @@ db.once("open", () => {
 
 const app = express(); //express
 
+app.engine('ejs', ejsMate);
 app.use(express.urlencoded({ extended: true })); //parse form body data
 app.use(methodOverride('_method')); //enable use of PUT, DELETE, and other non POST requests
 
